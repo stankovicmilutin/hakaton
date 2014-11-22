@@ -23,13 +23,15 @@
     </head>
     <body>
         <div class="menu-left">
-            @include('menu')
+            @include('template/menu')
         </div>
-        
-            
+        <section class="main-content">
+            @yield("content")
+        </section>
+        <footer>
         @yield('extra-js')
         
         {{ HTML::script("js/script.js") }}
-
+        </footer>
     </body>
 </html>

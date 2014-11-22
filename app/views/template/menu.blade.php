@@ -1,5 +1,5 @@
 <ul>
-    <li><a href="#"></a></li>
+    <li><a href=""></a></li>
     <li>
         <a href="#"><span class="icon-pen3"></span><span class="item">ispiti</span></a>
     </li>
