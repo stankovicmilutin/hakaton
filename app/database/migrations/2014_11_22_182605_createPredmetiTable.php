@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePredmetTable extends Migration {
+class CreatePredmetiTable extends Migration {
 
 	/**
 	 * Run the migrations.
