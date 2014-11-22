@@ -16,7 +16,7 @@ class CreateStudentIspitTable extends Migration {
                 $t->increments('ID');
                 $t->integer('studentID')->nullable()->unsigned();
                 $t->integer('predmetID')->nullable()->unsigned();
-                $t->integer('ocena');
+                $t->integer('ocena')->nullable();
                 
                 $t->timestamps();
                  

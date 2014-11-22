@@ -14,7 +14,7 @@
 
 Route::get('/',             array(    'as' => 'pocetna',    'uses' =>'HomeController@pocetna'));
 Route::get('/ispiti',       array(    'as' => 'ispiti',     'uses' =>'HomeController@ispiti'));
-Route::get('/finansije',    array(    'as' => 'ispiti',     'uses' =>'HomeController@finansije'));
-Route::get('/dokumenta',    array(    'as' => 'ispiti',     'uses' =>'HomeController@dokumenta'));
-Route::get('/pregled',      array(    'as' => 'ispiti',     'uses' =>'HomeController@pregled'));
-Route::get('/kalendar',     array(    'as' => 'ispiti',     'uses' =>'HomeController@kalendar'));
+Route::get('/finansije',    array(    'as' => 'finansije',  'uses' =>'HomeController@finansije'));
+Route::get('/dokumenta',    array(    'as' => 'dokumenta',  'uses' =>'HomeController@dokumenta'));
+Route::get('/pregled',      array(    'as' => 'pregled',    'uses' =>'HomeController@pregled'));
+Route::get('/kalendar',     array(    'as' => 'kalendar',   'uses' =>'HomeController@kalendar'));
