@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://localhost/hakaton',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => 'qSW8Hp6K3EU0vpOwKnMxTw2CYEF0CDsG',
+	'key' => 'qSw8Zp6K3EU023OwKnMQwE2CYEF0CDsG',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
