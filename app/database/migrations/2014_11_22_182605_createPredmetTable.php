@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIspitiTable extends Migration {
+class CreatePredmetTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,11 @@ class CreateIspitiTable extends Migration {
 	 */
 	public function up()
 	{
-            Schema::create('ispiti',function($t){
+            Schema::create('predmeti',function($t){
                 $t->increments('ID');
                 $t->string('naziv');
-                $t->integer('predmetID');
+                $t->string('tip');
+                $t->integer('espb');
                 
                 $t->timestamps();
                         
@@ -29,7 +30,7 @@ class CreateIspitiTable extends Migration {
 	 */
 	public function down()
 	{
-            Schema::drop('ispiti');
+            Schema::drop('predmeti');
 	}
 
 }
