@@ -1,0 +1,173 @@
+﻿
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+    width: 100%;
+	line-height: 1;
+    font-size: 100%;
+    font-family: Montserrat, sans-serif;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*typo / icons*/
+
+@font-face {
+	font-family: 'hakaton';
+	src:url('../fonts/hakaton.eot?cy9527');
+	src:url('../fonts/hakaton.eot?#iefixcy9527') format('embedded-opentype'),
+		url('../fonts/hakaton.woff?cy9527') format('woff'),
+		url('../fonts/hakaton.ttf?cy9527') format('truetype'),
+		url('../fonts/hakaton.svg?cy9527#hakaton') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'hakaton';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-banknote:before {
+	content: "\e600";
+}
+.icon-paperclip2:before {
+	content: "\e601";
+}
+.icon-pen3:before {
+	content: "\e602";
+}
+.icon-see:before {
+	content: "\e603";
+}
+.icon-small58:before {
+	content: "\e604";
+}
+.icon-newspaper:before {
+	content: "\e605";
+}
+
+/*common styles*/
+
+a {
+    text-decoration: none;
+}
+
+
+/*menu*/
+
+.menu-left {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 19.375em;
+    height: 100%;
+    background-color: #2c3035;
+}
+
+.menu-left ul {
+    background-color: #2c3035;
+
+}
+
+.menu-left a {
+    height: 3.75em;
+    display: block;
+    color: #5a6166;
+    font-size: 0.8125em;
+    position: relative;
+    padding-left: 6.46em;
+    border-bottom: 1px solid #22252a;
+    position:relative;
+}
+
+.menu-left > ul > li > a {
+    text-transform: uppercase;
+}
+
+.menu-left span[class*="icon-"] {
+    width: 3.9375rem;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.7em;
+    padding-top: .6em;
+    position: absolute;
+    left: 0;
+}
+
+.menu-left .item {
+    display: inline-block;
+    text-align: left;
+    line-height: 1;
+    position:relative;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    
+}
+
+.drop-down li {
+    background-color: #282b30;
+}
+
+.drop-down li:hover,
+.drop-down li.active {
+    background-color: #2c3035; 
+}
+
+
+
