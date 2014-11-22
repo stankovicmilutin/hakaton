@@ -17,6 +17,9 @@ class CreateRokoviTable extends Migration {
                 $t->string('naziv');
                 $t->date('pocetak');
                 $t->date('kraj');
+                $t->date('pocetak_prijave');
+                $t->date('kraj_prijave');
+                
                 
                 $t->timestamps();
                         
