@@ -15,6 +15,7 @@ class CreateRokoviTable extends Migration {
             Schema::create('rokovi',function($t){
                 $t->increments('ID');
                 $t->string('naziv');
+                $t->string('tip');
                 $t->date('pocetak');
                 $t->date('kraj');
                 $t->date('pocetak_prijave');
