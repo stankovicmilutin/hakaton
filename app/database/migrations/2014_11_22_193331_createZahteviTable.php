@@ -14,7 +14,7 @@ class CreateZahteviTable extends Migration {
 	{
 		Schema::create('zahtevi', function($t) {
                 $t->increments('ID');
-                $t->integer('studentID');
+                $t->integer('studentID')->nullable()->unsigned();
                 $t->string('dokument', 80);
                 $t->timestamps();
                  

@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
 
+Route::get('/',             array(    'as' => 'pocetna',    'uses' =>'HomeController@pocetna'));
+Route::get('/ispiti',       array(    'as' => 'ispiti',     'uses' =>'HomeController@ispiti'));
+Route::get('/finansije',    array(    'as' => 'ispiti',     'uses' =>'HomeController@finansije'));
+Route::get('/dokumenta',    array(    'as' => 'ispiti',     'uses' =>'HomeController@dokumenta'));
+Route::get('/pregled',      array(    'as' => 'ispiti',     'uses' =>'HomeController@pregled'));
+Route::get('/kalendar',     array(    'as' => 'ispiti',     'uses' =>'HomeController@kalendar'));

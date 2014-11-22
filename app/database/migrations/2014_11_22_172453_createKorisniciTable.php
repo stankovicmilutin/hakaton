@@ -21,7 +21,7 @@ class CreateKorisniciTable extends Migration {
                 $t->integer('jmbg');
                 $t->string('adresa', 80);
                 $t->string('email', 80);
-                $t->integer('smerID');
+                $t->integer('smerID')->nullable()->unsigned();
                 $t->tinyInteger('godina_studija');
                 $t->tinyInteger('level'); 
                 $t->timestamps();

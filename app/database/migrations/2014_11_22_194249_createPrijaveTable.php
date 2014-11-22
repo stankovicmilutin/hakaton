@@ -14,9 +14,9 @@ class CreatePrijaveTable extends Migration {
 	{
 		Schema::create('prijave', function($t) {
                 $t->increments('ID');
-                $t->integer('studentID');
-                $t->integer('rokID');
-                $t->integer('predmetID');
+                $t->integer('studentID')->nullable()->unsigned();
+                $t->integer('rokID')->nullable()->unsigned();
+                $t->integer('predmetID')->nullable()->unsigned();
                 
                 $t->timestamps();
                  

@@ -14,7 +14,7 @@ class CreateUplateTable extends Migration {
 	{
 		Schema::create('uplate', function($t) {
                 $t->increments('ID');
-                $t->integer('studentID');
+                $t->integer('studentID')->nullable()->unsigned();
                 $t->string('svrha', 255);
                 $t->float('iznos');
                 

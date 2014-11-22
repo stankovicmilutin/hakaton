@@ -14,8 +14,8 @@ class CreateStudentIspitTable extends Migration {
 	{
 		Schema::create('student_ispit', function($t) {
                 $t->increments('ID');
-                $t->integer('studentID');
-                $t->integer('predmetID');
+                $t->integer('studentID')->nullable()->unsigned();
+                $t->integer('predmetID')->nullable()->unsigned();
                 $t->integer('ocena');
                 
                 $t->timestamps();
