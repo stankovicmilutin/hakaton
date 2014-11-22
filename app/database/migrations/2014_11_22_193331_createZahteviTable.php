@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateZahtevTable extends Migration {
+class CreateZahteviTable extends Migration {
 
 	/**
 	 * Run the migrations.

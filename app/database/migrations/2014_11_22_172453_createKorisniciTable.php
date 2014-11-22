@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStudentTable extends Migration {
+class CreateKorisniciTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -20,6 +20,7 @@ class CreateStudentTable extends Migration {
                 $t->string('prezime', 80);
                 $t->integer('jmbg');
                 $t->string('adresa', 80);
+                $t->string('email', 80);
                 $t->integer('smerID');
                 $t->tinyInteger('godina_studija');
                 $t->tinyInteger('level'); 
