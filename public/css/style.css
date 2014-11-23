@@ -34,6 +34,7 @@ body {
 	line-height: 1;
     font-size: 100%;
     font-family: Montserrat, sans-serif;
+    min-height: 100vh;
 }
 
 ol, ul {
@@ -73,11 +74,31 @@ h4 {
     text-transform: uppercase;
 }
 
+h4.lrg {
+    font-size: 1.25em;
+}
+
 h6{
     font-family: Open Sans;
     font-size: 0.875em;
     font-weight: 300;
 }
+
+h6.lrg {
+    font-size: 1rem;
+}
+
+h6.small {
+    font-size: .81rem;
+}
+
+p {
+    font-family: Open Sans;
+    font-weight: 300;
+}
+
+
+
 
 @font-face {
 	font-family: 'hakaton';
@@ -140,6 +161,16 @@ a {
 .right {
     float: right;
 }
+
+.clr-red {
+    background-color: #f47564;
+}
+.clr-blue {
+    background-color: #42a5f5;
+}
+.clr-grn {
+    background-color: #67ba2f;
+}
 .txt-right {
     text-align: right;
 }
@@ -162,6 +193,18 @@ a {
     -moz-border-radius: 3px;
     position: relative;
     color: #768596;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border: 1px solid #f1f5f9;
+    margin-bottom: .8em;
+}
+
+.btn-1.active {
+    border-color: #f47564;
+    color: #f47564;
+    background-color: #fde8e5;
+
 }
 
 .thead h2 {
@@ -172,7 +215,7 @@ a {
 .btn-1 h6,
 .thead h6{
     display: inline-block;
-    padding: 1.785em 1em;
+    padding: 1.55em 1em;
 }
 
 .btn-1 h6.preostalo,
@@ -207,11 +250,35 @@ a {
     margin-left: 4.3em;
 }
 
+.btn-2 {
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    color: #fff;
+    padding: 1.3rem 0;
+    margin-bottom: .6em;
+}
+
+.btn-2 h6 {
+    margin-left: 4.18rem;
+}
+
+.btn-2 h6.small {
+    font-style: italic;
+    margin-top: .2em;
+}
+
+
+
 .thead {
     margin-top: 2.7em;
     display: block;
     width: 100%;
     position: relative;
+}
+
+.thead.s {
+    margin-top: 0;
 }
 
 .line {
@@ -333,23 +400,26 @@ header h4 {
 .main-content {
     width: calc(100% - 19.375em);
     margin-left: 19.375em ;
-    padding-top: 1.875em 
+    padding-top: 1.875em ;
 }
 
 .main-content > div {
     display: inline-block;
     padding: 0 1.875em 1.875em 1.875em;
     border-right: 1px solid #e8eef4;
-
+    height: 100%;
+    min-height: calc(100vh - 6.25rem);
 }
 
 .main-content .left {
     width: calc(100% - 25.625em);
+    height: 100%;
 }
 
 .main-content .right{
     width: 25.625em;
-    float: right;        
+    float: right; 
+    height: 100%;       
 }
 
 .widget {
@@ -400,6 +470,108 @@ header h4 {
     margin-right: .2em;
 }
 
+.left .line {
+    margin-top: 3.75em;
+}
+
+.news {
+    width: 40%;
+    height: 12.25em;
+    display: inline-block;
+    position: relative;
+    float: left;
+    margin: 5% 5% 3% 5%;
+}
+
+.date {
+    display: block;
+    height: 5.9em;
+    width: 4em;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    left: 0;
+
+}
+
+.day {
+    font-size: 2.25em;
+    padding: .5em 0;
+    text-align: center;
+    background-color: #f1f5f9;
+    color: #808d9d;
+}
+
+.mnth {
+    text-transform: uppercase;
+    font-size: .8em;
+    padding: .5em 0;
+    text-align: center;
+    background-color: #808d9d;
+    color: #ebeff4;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+.artcl {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 5.25em;
+    color: #808d9d;
+    overflow: hidden;
+}
+
+.artcl p {
+    margin-top: 1.2em;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.right h2 {
+    font-style: italic;
+    margin-bottom: 1em;
+    color: #b2c2d4;
+}
+.sum {
+    padding: 1em .6em;
+    border-top: 1px solid #d2dde9;
+    border-bottom: 1px solid #d2dde9;
+    margin-top: 1.7em;
+    color: #5d6f84;
+}
+
+.sum h4 {
+    display: inline-block;
+    font-size: 1rem;
+}
+.sum h4:last-child {
+    float: right;
+}
+.pay {
+    margin-top: 1.8em;
+}
+.pay a {
+    display: inline-block;
+    padding: 1em 0;
+    color: #d2dde9;
+}
+
+.pay a:last-child {
+    padding: 1em 3.2em;
+    color: #4d6279;
+    float: right;
+    background-color: #f1f5f9;
+    border: 1px solid #d2dde9;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
 
 
 
