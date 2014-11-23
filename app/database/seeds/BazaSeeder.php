@@ -35,7 +35,8 @@ class BazaSeeder extends Seeder {
             'email' => 'aleksandar.tosic@elfak.rs',
             'smerID' => 3,
             'godina_studija' => 5,
-            'level' => 1
+            'level' => 1,
+            'finansiranje' => "FIB"
         ));
 
         User::create(array(
@@ -48,7 +49,8 @@ class BazaSeeder extends Seeder {
             'email' => 'milutin.stankovic@elfak.rs',
             'smerID' => 1,
             'godina_studija' => 4,
-            'level' => 1
+            'level' => 1,
+            'finansiranje' => "FIB"
         ));
 
         User::create(array(
@@ -61,7 +63,8 @@ class BazaSeeder extends Seeder {
             'email' => 'milos.mirkovic@elfak.rs',
             'smerID' => 2,
             'godina_studija' => 3,
-            'level' => 1
+            'level' => 1,
+            'finansiranje' => "SAM"
         ));
 
         User::create(array(
@@ -74,7 +77,8 @@ class BazaSeeder extends Seeder {
             'email' => 'marko.manojlovic@elfak.rs',
             'smerID' => 3,
             'godina_studija' => 5,
-            'level' => 1
+            'level' => 1,
+            'finansiranje' => "SAM"
         ));
 
         Zahtev::create(array('studentID' => 1, 'dokument' => 'Svedočanstvo'));
@@ -97,13 +101,13 @@ class BazaSeeder extends Seeder {
         Prijava::create(array('studentID' => 4, 'rokID' => 1, 'predmetID' => 6));
         Prijava::create(array('studentID' => 4, 'rokID' => 1, 'predmetID' => 7));
 
-        /*Student_ispit::create(array('studentID' => 1, 'predmetID' => 1));
+        Student_ispit::create(array('studentID' => 1, 'predmetID' => 1));
         Student_ispit::create(array('studentID' => 2, 'predmetID' => 3));
         Student_ispit::create(array('studentID' => 2, 'predmetID' => 5));
         Student_ispit::create(array('studentID' => 3, 'predmetID' => 4));
         Student_ispit::create(array('studentID' => 4, 'predmetID' => 2));
         Student_ispit::create(array('studentID' => 4, 'predmetID' => 6));
-        Student_ispit::create(array('studentID' => 4, 'predmetID' => 7));*/
+        Student_ispit::create(array('studentID' => 4, 'predmetID' => 7));
     }
 
 }
