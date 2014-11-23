@@ -35,3 +35,21 @@
     color: #42a5f5;
     text-decoration: underline;
 }
+
+.menu-left a{
+    color: #d2dde9;
+}
+
+.pay a{
+    color: #2c3035;
+}
+
+header h4{
+    color: #2c3035;
+}
+
+h6{
+    font-weight: 400;
+}
+
+

@@ -36,7 +36,7 @@ class CreateRacunTable extends Migration {
 	 */
 	public function down()
 	{
-            Schema::drop('racun');
+            Schema::drop('racuni');
 	}
 
 }
