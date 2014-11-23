@@ -12,8 +12,8 @@
         @yield('extra-css')
 
         {{ HTML::style("css/style.css") }}
-        {{ HTML::style("css/fullcalendar.min.css") }}
         {{ HTML::style("css/extra.css") }}
+        {{ HTML::style("css/fullcalendar.min.css") }}
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link type="image/x-icon" href="favicon.png" rel="shortcut icon"/>
@@ -48,9 +48,9 @@
         @yield('extra-js')
 
         {{ HTML::script("js/jquery-2.1.1.min.js") }}
-        {{ HTML::script("js/moment.js") }}
+        {{ HTML::script("js/moment.min.js") }}
         {{ HTML::script("js/fullcalendar.min.js") }}
-        {{ HTML::script("js/sr.js") }}
+        {{ HTML::script("js/fullcalendar-sr.js") }}
         {{ HTML::script("js/script.js") }}
 
     </body>
