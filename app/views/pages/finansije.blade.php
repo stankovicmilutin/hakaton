@@ -1,5 +1,8 @@
 @extends('template/master')
 
+@section('page-title')
+Finansije
+@stop
 
 @section('content')
 <div class="thead s">

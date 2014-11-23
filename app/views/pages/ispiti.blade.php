@@ -1,5 +1,8 @@
 @extends('template/master')
 
+@section('page-title')
+Ispiti
+@stop
 
 @section('content')
     
@@ -16,7 +19,7 @@
         @if( $title == "položeni")
         <h6 class="txt-right preostalo">{{ $ispit->predmet->studPred()->ocena }} </h6>
         @else
-        <h6 class="txt-right preostalo prijavi-dugme">PRIJAVI</h6>
+        <h6 class="txt-right preostalo prijavi-dugme" id="{{ $ispit->ID }}">PRIJAVI</h6>
         @endif
     </div>
     @endforeach

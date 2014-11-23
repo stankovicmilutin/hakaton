@@ -1,5 +1,8 @@
 @extends('template/master')
 
+@section('page-title')
+Naslovna
+@stop
 
 @section('content')
  <?php  

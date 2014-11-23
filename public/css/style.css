@@ -352,11 +352,7 @@ a {
     padding: .2em .8em;
 }
 
-.btn-2 .small span {
-    position: relative;
-    font-size: 1em;
-    padding: 0;
-}
+
 
 
 
@@ -713,7 +709,7 @@ header h4 {
     -moz-border-radius: 3px;
 }
 
-@media screen and (max-width: 1590px) {
+@media screen and (max-width: 1650px) {
 body {
     font-size: 14px;
 }
@@ -722,18 +718,42 @@ body {
 .thead h6:nth-child(2) {
     display: none;
 }
+
+.btn-1.s h6:nth-child(3) {
+    margin-right: 13em;
+}
+
+.news {
+    display: block;
+    width: 90%;
+    float: none;
+    padding-bottom: 5em;
+    height: auto;
+}
 }
 
 @media screen and (max-width: 1290px) {
     .btn-1 h6:first-of-type {
         display: none;
     }
+    .btn-1.s h6:first-of-type {
+        display: inline-block;
+    }
     .btn-1 h6:nth-child(3) {
         margin-left: 4.5em;
     }
+    .menu-left {
+   display: none;
 }
 
-@media screen and (max-width: 1200px) {
+.main-content,
+header {
+    margin-left: 0;
+    width: 100%;
+}
+}
+
+@media screen and (max-width: 1000px) {
 .widget {
     display: block !important;
     width: 100%;
@@ -741,6 +761,38 @@ body {
 }
 
    
+}
+
+@media screen and (max-width: 880px) {
+body{
+    font-size: 12px;
+}
+
+   
+}
+
+@media screen and (max-width: 800px) {
+.main-content .right {
+    display: none;
+}
+
+.main-content .left {
+    width: 100%;
+}
+ 
+}
+
+@media screen and (max-width: 450px) {
+    .btn-1 h6:first-of-type {
+        display: none;
+    }
+    .btn-1.s h6:nth-child(3) {
+        margin-right: 9em;
+    }
+    .news {
+    padding-bottom: 9em;
+}
+
 }
 
 
