@@ -19,6 +19,8 @@ class HomeController extends BaseController {
                 $i++;
             }
         }
+        
+        
         foreach(Auth::user()->prijavljeniIspiti as $ispit){
             $raspored = RasporedIspita::where("rokID","=",$ispit->rokID)
                                     ->where("predmetID","=",$ispit->predmetID)
@@ -43,7 +45,6 @@ class HomeController extends BaseController {
             $data[$min] = $data[$j];
             $data[$j] = $data[$min];            
         }
-        
         
 	return View::make('pages/index', array("data" => $data, "sledeci_rok" => $ispitniRok, "rate" => $rate ));
     }

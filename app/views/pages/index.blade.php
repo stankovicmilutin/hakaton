@@ -17,7 +17,7 @@ Naslovna
     @if($rate != "fib" )
     <h3>Ukupno dugovanje</h3><h3><span>{{ 96000-$rate }}</span>RSD</h3>
     @else
-    <h3>Finansiranje iz budžeta</h3><h3><span></span></h3>
+    <h3>Finansiranje iz budzeta</h3><h3><span></span></h3>
     @endif
 </div>
 <div class="clearfix"></div>
@@ -65,7 +65,7 @@ if ($count > 5)
         @if( $data[$i] instanceof RasporedIspita )
             <span class="icon-pen3"></span>
             <h6>Predstojeći ispit</h6>
-            <h6>{{ $data[$i]->predmet }}</h6>
+            <h6>{{ $data[$i]->predmet->naziv }}</h6>
             <h6 class="txt-right">{{ date("d. F Y.",strtotime( $data[$i]->s_date)) }}</h6>
             <?php
                 $your_date = strtotime($data[$i]->s_date);
