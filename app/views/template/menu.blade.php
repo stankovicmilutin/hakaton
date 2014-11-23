@@ -7,7 +7,10 @@
         <a href="{{ URL::route('ne_ispiti') }}"><span class="icon-pen3"></span><span class="item">ispiti</span></a>
         <ul class="drop-down">
             <li>
-                <a href="{{ URL::route("po_ispiti") }}"><span class="icon-pen3"></span><span class="item">POLOŽENI ISPITI</span></a>
+                <a href="{{ URL::route('ne_ispiti') }}"><span></span><span class="item">NEPOLOŽENI ISPITI</span></a>
+            </li>
+            <li>
+                <a href="{{ URL::route("po_ispiti") }}"><span></span><span class="item">POLOŽENI ISPITI</span></a>
             </li>
         </ul>
     </li>
@@ -16,7 +19,7 @@
         @if( Auth::user()->finansiranje == "SAM")
         <ul class="drop-down">
             <li>
-                <a href="{{ URL::route('skolarina') }}"><span class="icon-pen3"></span><span class="item">ŠKOLARINA</span></a>
+                <a href="{{ URL::route('skolarina') }}"><span></span><span class="item">ŠKOLARINA</span></a>
             </li>
         </ul>
         @endif

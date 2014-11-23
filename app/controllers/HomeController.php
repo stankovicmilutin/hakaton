@@ -3,7 +3,40 @@
 class HomeController extends BaseController {
 
     public function pocetna(){
-	return View::make('pages/index');
+        
+        $data = array();
+        
+        $i = 0;
+        foreach(Auth::user()->racuni as $racun){
+            $data[$i] = $racun;
+            $data[$i]->s_date = $racun->rok;
+            $i++;
+        }
+        foreach(Auth::user()->prijavljeniIspiti as $ispit){
+            $raspored = RasporedIspita::where("rokID","=",$ispit->rokID)
+                                    ->where("predmetID","=",$ispit->predmetID)
+                                    ->first();
+            $data[$i] = $raspored;
+            $data[$i]->s_date = $raspored->datum;
+            $i++;
+        }
+        $ispitniRok = Rok::where("pocetak_prijave", ">=", new DateTime('today') )->orderBy("pocetak_prijave","asc")->first();
+        $data[$i] = $ispitniRok;
+        $data[$i]->s_date = $ispitniRok->pocetak;
+        
+        for($j = 0; $j<$i; $j++){
+            $min = $j;
+            for($k = $j; $k<$i; $k++){
+                if( $data[$min]->s_date > $data[$k]->s_date )
+                    $min = $k;
+            }
+            $temp = $data[$min];
+            $data[$min] = $data[$j];
+            $data[$j] = $data[$min];            
+        }
+        
+        
+	return View::make('pages/index', array("data" => $data ));
     }
     
     public function ne_ispiti(){

@@ -11,7 +11,7 @@ class Predmet extends Eloquent{
     }
     
     public function studPred(){
-        return Student_ispit::where("predmetID","=",$this->ID)
+        return StudentIspit::where("predmetID","=",$this->ID)
                             ->where("studentID","=",Auth::user()->ID)
                             ->first();
     }

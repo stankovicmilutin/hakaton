@@ -96,18 +96,26 @@ class BazaSeeder extends Seeder {
         Prijava::create(array('studentID' => 1, 'rokID' => 1, 'predmetID' => 1));
         Prijava::create(array('studentID' => 2, 'rokID' => 1, 'predmetID' => 3));
         Prijava::create(array('studentID' => 2, 'rokID' => 1, 'predmetID' => 5));
-        Prijava::create(array('studentID' => 3, 'rokID' => 1, 'predmetID' => 4));
-        Prijava::create(array('studentID' => 4, 'rokID' => 1, 'predmetID' => 2));
-        Prijava::create(array('studentID' => 4, 'rokID' => 1, 'predmetID' => 6));
+        Prijava::create(array('studentID' => 2, 'rokID' => 1, 'predmetID' => 4));
+        Prijava::create(array('studentID' => 2, 'rokID' => 1, 'predmetID' => 2));
+        Prijava::create(array('studentID' => 2, 'rokID' => 1, 'predmetID' => 6));
         Prijava::create(array('studentID' => 4, 'rokID' => 1, 'predmetID' => 7));
 
         StudentIspit::create(array('studentID' => 1, 'predmetID' => 1));
         StudentIspit::create(array('studentID' => 2, 'predmetID' => 3));
         StudentIspit::create(array('studentID' => 2, 'predmetID' => 5));
-        StudentIspit::create(array('studentID' => 3, 'predmetID' => 4));
-        StudentIspit::create(array('studentID' => 4, 'predmetID' => 2));
-        StudentIspit::create(array('studentID' => 4, 'predmetID' => 6));
+        StudentIspit::create(array('studentID' => 2, 'predmetID' => 4));
+        StudentIspit::create(array('studentID' => 2, 'predmetID' => 2));
+        StudentIspit::create(array('studentID' => 2, 'predmetID' => 6));
         StudentIspit::create(array('studentID' => 4, 'predmetID' => 7));
+        
+        Racun::create(array('studentID' => 2, 'opis' => "školarina", "iznos" => 11000, "rok" => '2014-12-05' ));
+        Racun::create(array('studentID' => 2, 'opis' => "školarina", "iznos" => 11000, "rok" => '2015-01-05' ));
+        Racun::create(array('studentID' => 2, 'opis' => "školarina", "iznos" => 11000, "rok" => '2015-02-05' ));
+        Racun::create(array('studentID' => 2, 'opis' => "školarina", "iznos" => 11000, "rok" => '2015-03-05' ));
+        Racun::create(array('studentID' => 2, 'opis' => "školarina", "iznos" => 11000, "rok" => '2015-04-05' ));
+        Racun::create(array('studentID' => 2, 'opis' => "školarina", "iznos" => 11000, "rok" => '2015-05-05' ));
+        Racun::create(array('studentID' => 2, 'opis' => "školarina", "iznos" => 11000, "rok" => '2015-06-05' ));
     }
 
 }
