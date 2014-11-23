@@ -1,7 +1,7 @@
     <h2>Aktivne transakcije </h2>
             <div class="sum">
                 <h4 class="lrg">Ukupno:</h4>
-                <h4 class="lrg">11.700,00</h4>
+                <h4 class="lrg">0,00</h4>
             </div>
             <div class="pay">
                 <a target="blank" href="http://uplatnica.rs/uplatnica.php?uplatilac={{ Auth::user()->ime }}%20{{ Auth::user()->prezime }}&svrha=racun:elfak35A1&primalac=Elektronski%20Fakultet%20Nis&sifra=189&valuta=RSD&iznos=&iznos_dec=&racun=160-332233-93&model=&poziv="><h4><span class="icon-download"></span>pdf uplatnice</h4></a>
