@@ -47,7 +47,7 @@ if ($count > 5)
         @if( $data[$i] instanceof Rok )
             <span></span>
             <h6>Ispitni rok</h6>
-            <h6>Početak prijave za </h6>
+            <h6>Početak prijave za {{  }}</h6>
             <h6 class="txt-right">{{ date("d. F Y.",strtotime( $data[$i]->s_date)) }}</h6>
             <?php
                 $your_date = strtotime($data[$i]->s_date);

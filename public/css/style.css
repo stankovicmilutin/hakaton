@@ -102,11 +102,11 @@ p {
 
 @font-face {
 	font-family: 'hakaton';
-	src:url('../fonts/hakaton.eot?cy9527');
-	src:url('../fonts/hakaton.eot?#iefixcy9527') format('embedded-opentype'),
-		url('../fonts/hakaton.woff?cy9527') format('woff'),
-		url('../fonts/hakaton.ttf?cy9527') format('truetype'),
-		url('../fonts/hakaton.svg?cy9527#hakaton') format('svg');
+	src:url('../fonts/hakaton.eot?-og6ke6');
+	src:url('../fonts/hakaton.eot?#iefix-og6ke6') format('embedded-opentype'),
+		url('../fonts/hakaton.woff?-og6ke6') format('woff'),
+		url('../fonts/hakaton.ttf?-og6ke6') format('truetype'),
+		url('../fonts/hakaton.svg?-og6ke6#hakaton') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -119,10 +119,32 @@ p {
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
+
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-arrow-right:before {
+	content: "\e605";
+}
+.icon-avatar:before {
+	content: "\e606";
+}
+.icon-close:before {
+	content: "\e607";
+}
+.icon-download:before {
+	content: "\e608";
+}
+.icon-info:before {
+	content: "\e609";
+}
+.icon-log-out:before {
+	content: "\e60a";
+}
+.icon-skolarina:before {
+	content: "\e60b";
+}
 .icon-banknote:before {
 	content: "\e600";
 }
@@ -137,9 +159,6 @@ p {
 }
 .icon-small58:before {
 	content: "\e604";
-}
-.icon-newspaper:before {
-	content: "\e605";
 }
 
 /*common styles*/
@@ -182,7 +201,8 @@ a {
     color: #acbed1;
 }
 
-.btn-1 {
+.btn-1,
+.btn-1.s.active {
     display: block;
     height: 3.75em;
     line-height: 100%;
@@ -198,7 +218,21 @@ a {
     -moz-border-radius: 3px;
     border: 1px solid #f1f5f9;
     margin-bottom: .8em;
+    overflow: hidden;
 }
+
+.btn-1 > span:first-child {
+    font-size: 1.6em;
+    padding: .65em .65em .65em .9em;
+    display: inline-block;
+    color: #acbed1;
+} 
+
+.btn-1.active > span:first-child {
+    color: #f47564;
+} 
+
+
 
 .btn-1.active {
     border-color: #f47564;
@@ -206,10 +240,20 @@ a {
     background-color: #fde8e5;
 
 }
+.name {
+    width: 12em;
+}
+.btn-1.s.active > span:first-child {
+    color:#acbed1;
+}
 
 .thead h2 {
     display: inline-block;
     margin-top: .7em;
+}
+
+.icon-download {
+    margin-right: .6em;
 }
 
 .btn-1 h6,
@@ -219,7 +263,8 @@ a {
 }
 
 .btn-1 h6.preostalo,
-.thead .preostalo {
+.thead .preostalo,
+.thead.s h6:nth-child(3) {
     position: absolute;
     right: 0;
     margin-right: 4.8em;
@@ -231,7 +276,8 @@ a {
 }
 
 .btn-1 h6:nth-child(4),
-.thead h6:nth-child(2) {
+.thead h6:nth-child(2)
+ {
     position: absolute;
     right: 0;
     margin-right: 14em;
@@ -243,11 +289,42 @@ a {
     margin-left: 17em;
 }
 
+.btn-1.s h6:nth-child(3){
+    margin-right: 25em;
+    text-align:right ;
+    right: 0;
+}
+
 .btn-1 h6:first-of-type {
     font-style: italic;
     position: absolute;
     left: 0;
-    margin-left: 4.3em;
+    margin-left: 5em;
+}
+
+.btn-1.s .paybtn {
+    
+    text-transform: uppercase;
+    font-size: .75em;
+    padding: .7em 0;
+    width: 8.333em;
+    display: inline-block;
+    position: absolute;
+    right: 1.2em; 
+    color: #b5bdc7;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border: 1px solid #acb5c0;
+    text-align: center;
+    background-color: #f1f5f9;
+    margin-top: 1em;
+}
+
+.btn-1.s.active .paybtn {
+    background-color: #67ba2f;
+    color: #fff;
+
 }
 
 .btn-2 {
@@ -257,6 +334,7 @@ a {
     color: #fff;
     padding: 1.3rem 0;
     margin-bottom: .6em;
+    position: relative;
 }
 
 .btn-2 h6 {
@@ -268,6 +346,14 @@ a {
     margin-top: .2em;
 }
 
+.btn-2 span {
+    position: absolute;
+    font-size: 1.5em;
+    padding: .2em .8em;
+}
+
+
+
 
 
 .thead {
@@ -277,8 +363,13 @@ a {
     position: relative;
 }
 
-.thead.s {
+.thead.s,
+.thead.s h2 {
     margin-top: 0;
+}
+
+.thead.s h6 {
+    padding-top: .7em;
 }
 
 .line {
@@ -349,6 +440,7 @@ a {
 }
 
 .drop-down li {
+    font-family: Open Sans;
     background-color: #282b30;
 }
 
@@ -366,6 +458,7 @@ header {
     border-bottom: 1px solid #d2dde9; 
     height: 4.3em;  
     box-sizing: border-box;
+    color: #4d6279;
 }
 
 header > div {
@@ -384,6 +477,7 @@ header > div:first-of-type {
 
 header h4 {
     display: inline-block;
+    color: #8d99a8;
 }
 
 header h6,
@@ -391,8 +485,16 @@ header h4 {
     position: relative;
 }
 
-.name h6 {
-    line-height: 1.2;
+
+
+.name .icon-avatar {
+    font-size: 1.5em;
+    margin: .8em .6em 0 0;
+    float: left;
+}
+
+.icon-log-out {
+    font-size: 1.6em;
 }
 
 /*main-content*/
@@ -422,9 +524,25 @@ header h4 {
     height: 100%;       
 }
 
+
+.btn-1 > div:last-child {
+    color: #acbed1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.25em;
+    padding: 1em;
+    border-left: 1px solid #e0e7ef;
+}
+
+.btn-1.active > div:last-child {
+    border-color: #f47564;
+    color: #f47564;
+}
+
 .widget {
     display: inline-block;
-    width: 31%;
+    width: 49%;
     height: 14.375em;
     float: left;
     padding: 1.875em;
@@ -439,6 +557,20 @@ header h4 {
     max-width: 10em;
 }
 
+.menu-left img {
+    position: absolute;
+    margin-top: 1.8em;
+    width: 8em;
+    height: auto;
+    left: 2em;
+
+}
+
+.icon-arrow-right {
+    font-size: .8em !important;
+    margin-top: 1.6em !important;
+}
+
 .widget h3:last-child{
     display: inline-block;
     max-width: none;
@@ -446,9 +578,6 @@ header h4 {
     bottom: 1.875rem;
 }
 
-.widget.one {
-    background-color: #000;
-}
 
 .widget.one span,
 .widget.sec span {
@@ -457,12 +586,19 @@ header h4 {
 }
 
 .widget.sec {
-    margin: 0 3.5%;
+    margin-right: 1%;
     background-color: #42a5f5;
+    background-image: url(../img/stopwatch.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
 }
 
 .widget.thrd {
+    margin-left: 1%;
     background-color: #f47564;
+    background-image: url(../img/wallet.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
 }
 
 .widget.thrd span {
@@ -572,6 +708,37 @@ header h4 {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
 }
+
+@media screen and (max-width: 1590px) {
+body {
+    font-size: 14px;
+}
+
+.btn-1 h6:nth-child(4),
+.thead h6:nth-child(2) {
+    display: none;
+}
+}
+
+@media screen and (max-width: 1290px) {
+    .btn-1 h6:first-of-type {
+        display: none;
+    }
+    .btn-1 h6:nth-child(3) {
+        margin-left: 4.5em;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+.widget {
+    display: block !important;
+    width: 100%;
+    margin: .7em 0 !important;
+}
+
+   
+}
+
 
 
 

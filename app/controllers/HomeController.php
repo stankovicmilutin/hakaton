@@ -56,7 +56,8 @@ class HomeController extends BaseController {
     }
     
     public function finansije(){
-        return View::make('pages/index');
+        $uplate = Uplata::where("studentID","=",Auth::user()->ID)->get();
+        return View::make('pages/finansije', array("uplate" => $uplate ));
     }
     
     public function skolarina(){
@@ -65,7 +66,7 @@ class HomeController extends BaseController {
     }
     
     public function dokumenta(){
-        return View::make('pages/index');
+        return View::make('pages/dokumenta');
     }
     
     public function pregled(){

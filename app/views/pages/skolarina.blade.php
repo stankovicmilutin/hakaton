@@ -9,12 +9,12 @@
         <h6 class="txt-right"></h6>
  </div>
 @foreach($rate as $rata)
-
-    <div class="btn-1 active"><span></span>
+    <div class="btn-1 s active">
+        <span class="icon-skolarina"></span>
+        <h6>{{ $rata->opis }}</h6>
         <h6 class="txt-right">{{ Funkcije::phpDatum($rata->rok) }}</h6>
-        <h6 class="txt-right preostalo">{{ $rata->iznos }} RSD</h6>
-        <h6 class="txt-right preostalo">PLATI</h6>
-        <div><span></span></div>
+        <h6 class="txt-right iznos">{{ $rata->iznos }} RSD</h6>
+        <a href="#" class="paybtn">plati</a>
     </div>
 
 @endforeach
