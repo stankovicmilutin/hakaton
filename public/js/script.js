@@ -17,6 +17,11 @@ $(function() {
                window.open(uplatnica);
             });
             
+            $(document).on('click', '.odjavi-dugme', function() {
+                 var $this = $(this);
+                 $this.remove();
+            });
+            
             $(document).on('click', '.prijavi-dugme', function() {
                 var $this = $(this);
                 var iznos;
@@ -33,15 +38,12 @@ $(function() {
                 if (!$this.hasClass('prijavljen'))
                 {
                     var transakcija = '<div class="btn-2 clr-red"><span class="icon-pen3"></span><h6 class="lrg">'
-                                      + $this.parent().find('.naziv-predmeta').html() + '</h6><h6 class="small"><span>' + iznos + '</span> dinara</h6><span></span></div>';
+                                      + $this.parent().find('.naziv-predmeta').html() + '</h6><h6 class="small"><span>' + iznos + '</span> dinara</h6>'
+                                      + '<span class="odjavi-dugme">x</span></div>';
                               
                     $(transakcija).css({'opacity': '0', 'position': 'relative', 'left': '-50%'}).insertBefore($('.right').find('.sum')).animate({left: 0, opacity: 1}, 400);
                     
-                    var suma = parseFloat($('.sum *:last-child').find('span').html());
-                    suma += parseFloat($(transakcija).find('.small').find('span').html());
-                    suma = suma.toFixed(2);
-
-                    $('.sum > :last-child').find('span').html(suma);
+                    izracunajSumuTransakcija(transakcija);
                     
                     $this.addClass('prijavljen');
                     if (localStorage.getItem('transakcije') == undefined)
@@ -82,6 +84,15 @@ $(function() {
                 }
             });
         });
+        
+        function izracunajSumuTransakcija(selector)
+        {
+            var suma = parseFloat($('.sum *:last-child').find('span').html());
+            suma += parseFloat($(selector).find('.small').find('span').html());
+            suma = suma.toFixed(2);
+
+            $('.sum > :last-child').find('span').html(suma);
+        }
         
         function initialize()
         {
