@@ -6,7 +6,7 @@ $(function() {
                e.preventDefault(); 
                 
                var uplatnica = $(this).attr('href');
-               var iznos = $('.sum > :last-child span').html().split('.');
+               var iznos = $('.sum > :last-child').html().split('.');
               
                uplatnica = uplatnica.split('&iznos_dec=');
                uplatnica = '' + uplatnica[0] + iznos[0] + '&iznos_dec=' + uplatnica[1]; 
