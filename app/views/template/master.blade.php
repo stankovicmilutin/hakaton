@@ -46,6 +46,10 @@
 
         @yield('extra-js')
 
+        {{ HTML::script("js/jquery-2.1.1.min.js") }}
+        {{ HTML::script("js/moment.js") }}
+        {{ HTML::script("js/fullcalendar.min.js") }}
+        {{ HTML::script("js/sr.js") }}
         {{ HTML::script("js/script.js") }}
 
     </body>
