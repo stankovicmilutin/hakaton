@@ -73,3 +73,20 @@ h6{
     line-height:  1.4em;
     font-size: 15px;
 }
+
+.login-button{
+    height: 48px;
+    background-color: #42a5f5; 
+    border: solid 1px #42a5f5;
+    color: #d2dde9;
+}
+
+.login-label{
+    font-size: 14px;
+}
+
+#remember-me{
+    display: inline;
+    width: 20px;
+    margin-left: 75px;
+}

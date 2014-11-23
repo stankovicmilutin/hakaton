@@ -351,6 +351,76 @@ a {
     margin-left: 5em;
 }
 
+.login {
+    width: 100%;
+    height: 100vh;
+    background: url(../img/bg.jpg) center;
+    background-size: cover;
+}
+
+.login-form {
+    position: relative;
+    width: 22.5em;
+    height: 25em;
+        border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+
+}
+
+.login-form .top {
+    width: 100%;
+    height: 57%;
+    background-color: #fff;
+    border-bottom: 1px solid #acbed1;
+    padding: 3.94em 0;
+}
+
+.login1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    width: 22.5em;
+    height: 32em;
+    display: block;
+    margin: 0 auto;
+}
+
+.login-form .bottom {
+    background-color: #f6f9fd;
+    height: 43%;
+    padding: 3.94em 0;
+}
+
+.login-form .top input {
+    margin: .5em auto;
+    display: block;
+    width: 15.13em;
+    height: 2.875em;
+}
+
+.login-form .bottom input{
+    margin: .5em auto;
+    display: block;
+    width: 15.13em;
+}
+
+.login img {
+    width: 10em;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 2em;
+
+}
+
 .btn-1.s .paybtn,
 .prijavi-dugme.paybtn {
     cursor: pointer;
@@ -402,12 +472,7 @@ a {
     padding: .2em .8em;
 }
 
-.btn-2 .small span
-{
-    position: relative;
-    font-size: 1em;
-    padding: 0;
-}
+
 
 
 
