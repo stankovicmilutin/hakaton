@@ -56,6 +56,12 @@ table {
 }
 
 /*typo / icons*/
+h2{
+    font-family: Open Sans;
+    font-weight: 300;
+    font-size: 1.5em;
+}
+
 h3 {
     font-family: Montserrat;
     font-size: 1.5em;
@@ -68,7 +74,7 @@ h4 {
 }
 
 h6{
-    font-family: sans-serif;
+    font-family: Open Sans;
     font-size: 0.875em;
     font-weight: 300;
 }
@@ -131,7 +137,88 @@ a {
 .clearfix {
     clear: both;
 }
+.right {
+    float: right;
+}
+.txt-right {
+    text-align: right;
+}
 
+.thead {
+    height: 3.75em;
+    overflow:hidden;
+    font-style: italic;
+    color: #acbed1;
+}
+
+.btn-1 {
+    display: block;
+    height: 3.75em;
+    line-height: 100%;
+    vertical-align: middle;
+    background-color: #f1f5f9;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    position: relative;
+    color: #768596;
+}
+
+.thead h2 {
+    display: inline-block;
+    margin-top: .7em;
+}
+
+.btn-1 h6,
+.thead h6{
+    display: inline-block;
+    padding: 1.785em 1em;
+}
+
+.btn-1 h6.preostalo,
+.thead .preostalo {
+    position: absolute;
+    right: 0;
+    margin-right: 4.8em;
+}
+
+.thead h6:last-child {
+    position: absolute;
+    right: 0;
+}
+
+.btn-1 h6:nth-child(4),
+.thead h6:nth-child(2) {
+    position: absolute;
+    right: 0;
+    margin-right: 14em;
+}
+
+.btn-1 h6:nth-child(3) {
+    position: absolute;
+    left: 0;
+    margin-left: 17em;
+}
+
+.btn-1 h6:first-of-type {
+    font-style: italic;
+    position: absolute;
+    left: 0;
+    margin-left: 4.3em;
+}
+
+.thead {
+    margin-top: 2.7em;
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #e0e7ef;
+}
 /*menu*/
 
 .menu-left {
@@ -312,6 +399,8 @@ header h4 {
     font-size: 2.25em;
     margin-right: .2em;
 }
+
+
 
 
 
