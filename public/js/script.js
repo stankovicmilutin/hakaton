@@ -1,30 +1,21 @@
 $(function() {
 	$(document).ready(function() {
-            $('#calendar').fullCalendar({
-                'lang': 'sr',
-                'events': [
-                    {
-                        title: 'Event',
-                        start: '2014-11-22'
-                    }
-                ]
+            initialize();
+              
+            $(document).on('click', '.pay > :first-child', function(e) {
+               e.preventDefault(); 
+                
+               var uplatnica = $(this).attr('href');
+               var iznos = $('.sum > :last-child span').html().split('.');
+              
+               uplatnica = uplatnica.split('&iznos_dec=');
+               uplatnica = '' + uplatnica[0] + iznos[0] + '&iznos_dec=' + uplatnica[1]; 
+               
+               uplatnica = uplatnica.split('&racun=');
+               uplatnica = '' + uplatnica[0] + iznos[1] + '&racun=' + uplatnica[1]; 
+               
+               window.open(uplatnica);
             });
-
-            if (localStorage.getItem('transakcije') != undefined)
-            {   
-                var a = [];
-                a = JSON.parse(localStorage.getItem('transakcije'));
-                for (var i = 0; i < a.length; i++)
-                    $(a[i]).insertBefore($('.right').find('.sum'));
-                
-                var suma = 0;
-                $('.right').find('.btn-2 .small').find('span').each(function() {
-                    suma += parseFloat($(this).html());                  
-                });
-                suma = suma.toFixed(2);
-                $('.sum :last-child').find('span').html(suma);
-            }
-                
             
             $(document).on('click', '.prijavi-dugme', function() {
                 var $this = $(this);
@@ -50,7 +41,7 @@ $(function() {
                     suma += parseFloat($(transakcija).find('.small').find('span').html());
                     suma = suma.toFixed(2);
 
-                    $('.sum *:last-child').find('span').html(suma);
+                    $('.sum > :last-child').find('span').html(suma);
                     
                     $this.addClass('prijavljen');
                     if (localStorage.getItem('transakcije') == undefined)
@@ -62,6 +53,14 @@ $(function() {
                         a = JSON.parse(localStorage.getItem('transakcije'));
                         a.push(transakcija);
                         localStorage.setItem('transakcije', JSON.stringify(a));
+                        
+                        var b = [];
+                        b.push(JSON.parse(localStorage.getItem('prijavljeni_ispiti')));
+                        localStorage.setItem('prijavljeni_ispiti', JSON.stringify(b));
+                        
+                        b = JSON.parse(localStorage.getItem('prijavljeni_ispiti'));
+                        b.push($('.left').index($this));
+                        localStorage.setItem('prijavljeni_ispiti', JSON.stringify(b));
                     }
                     else
                     {
@@ -69,8 +68,46 @@ $(function() {
                         a = JSON.parse(localStorage.getItem('transakcije'));
                         a.push(transakcija);
                         localStorage.setItem('transakcije', JSON.stringify(a));
+                        
+                        var b = [];
+                        b = JSON.parse(localStorage.getItem('prijavljeni_ispiti'));
+                        b.push($('.left').index($this));
+                        localStorage.setItem('prijavljeni_ispiti', JSON.stringify(b));
                     }
                 }
             });
         });
+        
+        function initialize()
+        {
+            $('#calendar').fullCalendar({
+                'lang': 'sr',
+                'events': [
+                    {
+                        title: 'Event',
+                        start: '2014-11-22'
+                    }
+                ]
+            });
+
+            if (localStorage.getItem('transakcije') != undefined)
+            {   
+                var a = [];
+                a = JSON.parse(localStorage.getItem('transakcije'));
+                for (var i = 0; i < a.length; i++)
+                    $(a[i]).insertBefore($('.right').find('.sum'));
+                
+                var b = [];
+                b = JSON.parse(localStorage.getItem('prijavljeni_ispiti'));
+                for (var i = 0; i < b.length; i++)
+                    $('.left > *').eq(b[i]).find('.prijavi-dugme').addClass('prijavljen');
+                
+                var suma = 0;
+                $('.right').find('.btn-2 .small').find('span').each(function() {
+                    suma += parseFloat($(this).html());                  
+                });
+                suma = suma.toFixed(2);
+                $('.sum :last-child').find('span').html(suma);
+            }
+        }
 })
