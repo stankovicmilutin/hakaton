@@ -39,7 +39,7 @@ class BazaSeeder extends Seeder {
         ));
 
         User::create(array(
-            'index' => 14567,
+            'index' => 14161,
             'password' => Hash::make("password"),
             'ime' => 'Milutin',
             'prezime' => 'Stanković',

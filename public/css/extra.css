@@ -1,0 +1,32 @@
+#login-page{
+    background: url('../img/login-bg.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.login-box{
+    background-color: #222;
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+    color: #fff;
+    font-size: 30px;
+}
+
+
+
+.login-box label{
+    font-size: 24px;
+}
+
+.form-group{
+    margin: 10px;
+}
+
+.form-group input{
+    height: 30px;
+    font-size: 24px;
+}
