@@ -30,7 +30,7 @@ class CreateStudentIspitTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop("student_ispit");
+		Schema::drop('student_ispit');
 	}
 
 }

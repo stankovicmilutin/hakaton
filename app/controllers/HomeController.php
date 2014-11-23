@@ -7,7 +7,7 @@ class HomeController extends BaseController {
     }
     
     public function ne_ispiti(){
-        $ispiti = Student_ispit::where("studentID","=", Auth::user()->ID)
+        $ispiti = StudentIspit::where("studentID","=", Auth::user()->ID)
                             ->whereNull("ocena")
                             ->get();
         
@@ -15,7 +15,7 @@ class HomeController extends BaseController {
     }
     
     public function po_ispiti(){
-        $ispiti = Student_ispit::where("studentID","=", Auth::user()->ID)
+        $ispiti = StudentIspit::where("studentID","=", Auth::user()->ID)
                             ->whereNotNull("ocena")
                             ->get();
         
