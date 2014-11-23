@@ -66,10 +66,13 @@ $(function() {
                 }*/
             });
             
-            $(document).on('click', '.prijavi-dugme', function() {
+            $(document).on('click', '.prijavi-dugme, .paybtn', function() {
                 var $this = $(this);
                 var $parent = $this.closest('.btn-1');
                 var iznos;
+                var boja = ($this.hasClass('prijavi-dugme')) ? 'clr-red' : 'clr-blue';
+                var ikonica = ($this.hasClass('prijavi-dugme')) ? 'icon-pen3' : 'icon-paperclip2';
+                
                 $.ajax({
                     type: "GET",
                     url: ajaxIspitUrl,
@@ -80,9 +83,11 @@ $(function() {
                     }
                   }); 
                 
+                if ($this.hasClass('paybtn')) iznos = parseFloat($parent.find('iznos'));
+                
                 if (!$this.hasClass('prijavljen'))
                 {
-                    var transakcija = '<div class="btn-2 clr-red" data-id="' + $this.attr('id') + '"><span class="icon-pen3"></span><h6 class="lrg">'
+                    var transakcija = '<div class="btn-2 ' + boja + '" data-id="' + $this.attr('id') + '"><span class="' + ikonica + '"></span><h6 class="lrg">'
                                       + $this.parent().find('.naziv-predmeta').html() + '</h6><h6 class="small"><span>' + iznos + '</span> dinara</h6>'
                                       + '<span class="odjavi-dugme">x</span></div>';
                               
@@ -162,7 +167,12 @@ $(function() {
                         title: 'Event',
                         start: '2014-11-22'
                     }
-                ]
+                ],
+                header: {
+                    left: 'title',
+                    center: '',
+                    right: 'prev,next'
+                }
             });
             //localStorage.clear();
             if (localStorage.getItem('transakcije') != undefined)
@@ -170,14 +180,7 @@ $(function() {
                 var a = [];
                 a = JSON.parse(localStorage.getItem('transakcije'));
                 for (var i = 0; i < a.length; i++)
-                {
-                    var b = [];
-                    b = JSON.parse(a);
-                    var element = '<div class="btn-2 clr-red" data-id="' + b[0] + '"><span class="icon-pen3"></span><h6 class="lrg">'
-                                      + b[1] + '</h6><h6 class="small"><span>' + b[2] + '</span> dinara</h6>'
-                                      + '<span class="odjavi-dugme">x</span></div>';
-                    $(element).insertBefore($('.right').find('.sum'));
-                }
+                    $(a[i]).insertBefore($('.right').find('.sum'));
                 
                 var suma = 0;
                 $('.right').find('.btn-2 .small').find('span').each(function() {
