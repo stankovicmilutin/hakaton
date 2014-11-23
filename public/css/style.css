@@ -18,6 +18,10 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+        box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
 }
 
 article, aside, details, figcaption, figure, 
@@ -30,9 +34,6 @@ body {
 	line-height: 1;
     font-size: 100%;
     font-family: Montserrat, sans-serif;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
 }
 
 ol, ul {
@@ -55,6 +56,22 @@ table {
 }
 
 /*typo / icons*/
+h3 {
+    font-family: Montserrat;
+    font-size: 1.5em;
+}
+
+
+h4 {
+    font-size: 0.875em;
+    text-transform: uppercase;
+}
+
+h6{
+    font-family: sans-serif;
+    font-size: 0.875em;
+    font-weight: 300;
+}
 
 @font-face {
 	font-family: 'hakaton';
@@ -104,6 +121,16 @@ a {
     text-decoration: none;
 }
 
+.v-center{
+    top: 50%;
+    transform:translateY(-50%);
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+}
+
+.clearfix {
+    clear: both;
+}
 
 /*menu*/
 
@@ -122,7 +149,7 @@ a {
 }
 
 .menu-left a {
-    height: 3.75em;
+    height: 3.8125rem;
     display: block;
     color: #5a6166;
     font-size: 0.8125em;
@@ -136,13 +163,20 @@ a {
     text-transform: uppercase;
 }
 
+.menu-left > ul > li:first-child a {
+    height: 4.3rem;
+}
+
+
+
+
 .menu-left span[class*="icon-"] {
     width: 3.9375rem;
     height: 100%;
     display: inline-block;
     text-align: center;
     font-size: 1.7em;
-    padding-top: .6em;
+    padding-top: .8em;
     position: absolute;
     left: 0;
 }
@@ -168,6 +202,118 @@ a {
 .drop-down li.active {
     background-color: #2c3035; 
 }
+
+/*header*/
+
+header {
+    padding-left: 1.875rem;
+    margin-left: 19.375em;
+    background-color: #f1f5f9;
+    border-bottom: 1px solid #d2dde9; 
+    height: 4.3em;  
+    box-sizing: border-box;
+}
+
+header > div {
+    display: inline-block;
+    border-left: 1px solid #d2dde9;
+    height: 100%;
+    float: right;
+    padding: 0 1.25em;
+}
+
+header > div:first-of-type {
+    width: 4.3em;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+header h4 {
+    display: inline-block;
+}
+
+header h6,
+header h4 {
+    position: relative;
+}
+
+.name h6 {
+    line-height: 1.2;
+}
+
+/*main-content*/
+
+.main-content {
+    width: calc(100% - 19.375em);
+    margin-left: 19.375em ;
+    padding-top: 1.875em 
+}
+
+.main-content > div {
+    display: inline-block;
+    padding: 0 1.875em 1.875em 1.875em;
+    border-right: 1px solid #e8eef4;
+
+}
+
+.main-content .left {
+    width: calc(100% - 25.625em);
+}
+
+.main-content .right{
+    width: 25.625em;
+    float: right;        
+}
+
+.widget {
+    display: inline-block;
+    width: 31%;
+    height: 14.375em;
+    float: left;
+    padding: 1.875em;
+    color: #fff;
+    position: relative;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+.widget h3 {
+    max-width: 10em;
+}
+
+.widget h3:last-child{
+    display: inline-block;
+    max-width: none;
+    position: absolute;
+    bottom: 1.875rem;
+}
+
+.widget.one {
+    background-color: #000;
+}
+
+.widget.one span,
+.widget.sec span {
+    font-size: 4.2em;
+    margin-right: .1em;
+}
+
+.widget.sec {
+    margin: 0 3.5%;
+    background-color: #42a5f5;
+}
+
+.widget.thrd {
+    background-color: #f47564;
+}
+
+.widget.thrd span {
+    font-size: 2.25em;
+    margin-right: .2em;
+}
+
+
 
 
 
