@@ -351,8 +351,9 @@ a {
     margin-left: 5em;
 }
 
-.btn-1.s .paybtn {
-    
+.btn-1.s .paybtn,
+.prijavi-dugme.paybtn {
+    cursor: pointer;
     text-transform: uppercase;
     font-size: .75em;
     padding: .7em 0;
@@ -549,6 +550,14 @@ header h4 {
 
 .icon-log-out {
     font-size: 1.6em;
+}
+
+.thead #tip {
+    margin-right: 18em;
+}
+
+.left-margin {
+    margin-left: 32em !important;
 }
 
 /*main-content*/
