@@ -23,11 +23,24 @@ $(function() {
                  
                 var a = [];
                 a = JSON.parse(localStorage.getItem('transakcije'));
-                var ind = a.indexOf($this);
+
+                var ind;
+                for (var i = 0; i < a.length; i++)
+                {
+                   if (a[i] != null)
+                   {
+                        var b = [];
+                        b = JSON.parse(a);
+                        if (b[0] == $id)
+                            ind = i;
+                    }
+                }
+            
                 a.splice(ind, 1);
                 localStorage.setItem('transakcije', JSON.stringify(a));
                 
                 $this.remove();
+                $('.prijavi-dugme[id="' + $id + '"]').removeClass('prijavljen');
                 
                 var suma = 0;
                 $('.right').find('.btn-2 .small').find('span').each(function() {
@@ -85,14 +98,24 @@ $(function() {
                         localStorage.setItem('transakcije', JSON.stringify(a));
                         
                         a = JSON.parse(localStorage.getItem('transakcije'));
-                        a.push($this.attr('id'));
+                        var b = [];
+                        b.push($this.attr('id'));
+                        b.push($this.parent().find('.naziv-predmeta').html());
+                        b.push(iznos);
+                        JSON.stringify(b);
+                        a.push(b);
                         localStorage.setItem('transakcije', JSON.stringify(a));
                     }
                     else
                     {
                         var a = [];
                         a = JSON.parse(localStorage.getItem('transakcije'));
-                        a.push($this.attr('id'));
+                        var b = [];
+                        b.push($this.attr('id'));
+                        b.push($this.parent().find('.naziv-predmeta').html());
+                        b.push(iznos);
+                        JSON.stringify(b);
+                        a.push(b);
                         localStorage.setItem('transakcije', JSON.stringify(a));
                     }
                     
@@ -147,7 +170,14 @@ $(function() {
                 var a = [];
                 a = JSON.parse(localStorage.getItem('transakcije'));
                 for (var i = 0; i < a.length; i++)
-                    $(a[i]).insertBefore($('.right').find('.sum'));
+                {
+                    var b = [];
+                    b = JSON.parse(a);
+                    var element = '<div class="btn-2 clr-red" data-id="' + b[0] + '"><span class="icon-pen3"></span><h6 class="lrg">'
+                                      + b[1] + '</h6><h6 class="small"><span>' + b[2] + '</span> dinara</h6>'
+                                      + '<span class="odjavi-dugme">x</span></div>';
+                    $(element).insertBefore($('.right').find('.sum'));
+                }
                 
                 var suma = 0;
                 $('.right').find('.btn-2 .small').find('span').each(function() {

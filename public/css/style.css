@@ -352,7 +352,12 @@ a {
     padding: .2em .8em;
 }
 
-
+.btn-2 .small span
+{
+    position: relative;
+    font-size: 1em;
+    padding: 0;
+}
 
 
 
