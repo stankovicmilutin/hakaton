@@ -2,7 +2,5 @@
 
 
 @section('content')
-        <div class="left">
-            <div id="calendar"></div>                
-        </div>
+    <div id="calendar"></div>                
 @stop

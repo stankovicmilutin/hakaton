@@ -12,6 +12,7 @@
         @yield('extra-css')
 
         {{ HTML::style("css/style.css") }}
+        {{ HTML::style("css/fullcalendar.min.css") }}
         {{ HTML::style("css/extra.css") }}
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
