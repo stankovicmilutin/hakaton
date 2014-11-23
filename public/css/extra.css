@@ -90,3 +90,8 @@ h6{
     width: 20px;
     margin-left: 75px;
 }
+
+.login-form input{
+    padding: 3px;
+    font-size: 16px;
+}
