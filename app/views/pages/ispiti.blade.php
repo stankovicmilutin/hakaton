@@ -23,4 +23,5 @@
     @endforeach
 @stop
 @section("extra-js")
+<script>var ajaxIspitUrl = '{{ URL::Route("ajax-ispit"); }}';</script>
  @stop
