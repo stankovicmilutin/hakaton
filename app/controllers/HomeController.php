@@ -23,7 +23,7 @@ class HomeController extends BaseController {
     }
     
     public function kalendar(){
-        return View::make('pages/index');
+        return View::make('pages/kalendar');
     }
 
 }
