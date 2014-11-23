@@ -18,7 +18,6 @@
         @else
         <h6 class="txt-right preostalo prijavi-dugme">PRIJAVI</h6>
         @endif
-        <div><span></span></div>
     </div>
     @endforeach
 @stop

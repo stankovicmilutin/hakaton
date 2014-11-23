@@ -27,7 +27,6 @@
         <header>
             <h4 class="v-center">dashboard</h4>
             <div><h6 class="v-center"><a href="{{ URL::route('odjava') }}"><span class="icon-log-out"></span></a></h6></div>
-            <div><h6 class="v-center">Pomoć</h6></div>
             <div class="name"><span class="icon-avatar"></span><h6 class="v-center">{{ Auth::user()->ime," ", Auth::user()->prezime }}</h6></div>
         </header>
         
