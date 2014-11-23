@@ -97,13 +97,13 @@ class BazaSeeder extends Seeder {
         Prijava::create(array('studentID' => 4, 'rokID' => 1, 'predmetID' => 6));
         Prijava::create(array('studentID' => 4, 'rokID' => 1, 'predmetID' => 7));
 
-        Student_ispit::create(array('studentID' => 1, 'predmetID' => 1));
+        /*Student_ispit::create(array('studentID' => 1, 'predmetID' => 1));
         Student_ispit::create(array('studentID' => 2, 'predmetID' => 3));
         Student_ispit::create(array('studentID' => 2, 'predmetID' => 5));
         Student_ispit::create(array('studentID' => 3, 'predmetID' => 4));
         Student_ispit::create(array('studentID' => 4, 'predmetID' => 2));
         Student_ispit::create(array('studentID' => 4, 'predmetID' => 6));
-        Student_ispit::create(array('studentID' => 4, 'predmetID' => 7));
+        Student_ispit::create(array('studentID' => 4, 'predmetID' => 7));*/
     }
 
 }
