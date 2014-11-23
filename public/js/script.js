@@ -17,8 +17,58 @@ $(function() {
                window.open(uplatnica);
             });
             
+            $(document).on('click', '.odjavi-dugme', function() {
+                var $this = $(this).closest('.btn-2');
+                var $id = $this.attr('data-id');
+                 
+                var a = [];
+                a = JSON.parse(localStorage.getItem('transakcije'));
+
+                var ind;
+                for (var i = 0; i < a.length; i++)
+                {
+                   if (a[i] != null)
+                   {
+                        var b = [];
+                        b = JSON.parse(a);
+                        if (b[0] == $id)
+                            ind = i;
+                    }
+                }
+            
+                a.splice(ind, 1);
+                localStorage.setItem('transakcije', JSON.stringify(a));
+                
+                $this.remove();
+                $('.prijavi-dugme[id="' + $id + '"]').removeClass('prijavljen');
+                
+                var suma = 0;
+                $('.right').find('.btn-2 .small').find('span').each(function() {
+                    suma += parseFloat($(this).html());                  
+                });
+                suma = suma.toFixed(2);
+                $('.sum > :last-child').html(suma);
+                
+                /*var b = [];
+                b = JSON.parse(localStorage.getItem('prijavljeni_ispiti'));
+                for (var i = 0; i < b.length; i++)
+                {   
+                    if (b[i] != null)
+                    {
+                        c = JSON.parse(b[i]);
+                        if (parseInt(c[1]) == ind)
+                        {
+                            $('.left > *').eq(b[i]).removeClass('prijavljen');
+                            b.splice(i, 1);
+                            localStorage.setItem('prijavljeni_ispiti', JSON.stringify(b));
+                        }
+                    }
+                }*/
+            });
+            
             $(document).on('click', '.prijavi-dugme', function() {
                 var $this = $(this);
+                var $parent = $this.closest('.btn-1');
                 var iznos;
                 $.ajax({
                     type: "GET",
@@ -32,16 +82,13 @@ $(function() {
                 
                 if (!$this.hasClass('prijavljen'))
                 {
-                    var transakcija = '<div class="btn-2 clr-red"><span class="icon-pen3"></span><h6 class="lrg">'
-                                      + $this.parent().find('.naziv-predmeta').html() + '</h6><h6 class="small"><span>' + iznos + '</span> dinara</h6><span></span></div>';
+                    var transakcija = '<div class="btn-2 clr-red" data-id="' + $this.attr('id') + '"><span class="icon-pen3"></span><h6 class="lrg">'
+                                      + $this.parent().find('.naziv-predmeta').html() + '</h6><h6 class="small"><span>' + iznos + '</span> dinara</h6>'
+                                      + '<span class="odjavi-dugme">x</span></div>';
                               
                     $(transakcija).css({'opacity': '0', 'position': 'relative', 'left': '-50%'}).insertBefore($('.right').find('.sum')).animate({left: 0, opacity: 1}, 400);
                     
-                    var suma = parseFloat($('.sum *:last-child').find('span').html());
-                    suma += parseFloat($(transakcija).find('.small').find('span').html());
-                    suma = suma.toFixed(2);
-
-                    $('.sum > :last-child').find('span').html(suma);
+                    izracunajSumuTransakcija(transakcija);
                     
                     $this.addClass('prijavljen');
                     if (localStorage.getItem('transakcije') == undefined)
@@ -51,37 +98,60 @@ $(function() {
                         localStorage.setItem('transakcije', JSON.stringify(a));
                         
                         a = JSON.parse(localStorage.getItem('transakcije'));
-                        a.push(transakcija);
+                        var b = [];
+                        b.push($this.attr('id'));
+                        b.push($this.parent().find('.naziv-predmeta').html());
+                        b.push(iznos);
+                        JSON.stringify(b);
+                        a.push(b);
                         localStorage.setItem('transakcije', JSON.stringify(a));
                     }
                     else
                     {
                         var a = [];
                         a = JSON.parse(localStorage.getItem('transakcije'));
-                        a.push(transakcija);
+                        var b = [];
+                        b.push($this.attr('id'));
+                        b.push($this.parent().find('.naziv-predmeta').html());
+                        b.push(iznos);
+                        JSON.stringify(b);
+                        a.push(b);
                         localStorage.setItem('transakcije', JSON.stringify(a));
                     }
                     
-                    if (localStorage.getItem('prijavljeni_ispiti') == undefined)
+                   /* if (localStorage.getItem('prijavljeni_ispiti') == undefined)
                     {
                         var b = [];
                         b.push(JSON.parse(localStorage.getItem('prijavljeni_ispiti')));
                         localStorage.setItem('prijavljeni_ispiti', JSON.stringify(b));
                         
                         b = JSON.parse(localStorage.getItem('prijavljeni_ispiti'));
-                        b.push($('.left').index($this));
+                        var c = [];
+                        c.push($('.btn-1').index($parent)); c.push($('.btn-2').index($('.btn-2:nth-last-child(3)'))); JSON.stringify(c);
+                        b.push(c);
                         localStorage.setItem('prijavljeni_ispiti', JSON.stringify(b));
                     }
                     else
                     {
                         var b = [];
                         b = JSON.parse(localStorage.getItem('prijavljeni_ispiti'));
-                        b.push($('.left').index($this));
+                        var c = [];
+                        c.push($('.btn-1').index($parent)); c.push($('.btn-2').index($('.btn-2:nth-last-child(3)'))); JSON.stringify(c);
+                        b.push(c);
                         localStorage.setItem('prijavljeni_ispiti', JSON.stringify(b));
-                    }
+                    }*/
                 }
             });
         });
+        
+        function izracunajSumuTransakcija(selector)
+        {
+            var suma = parseFloat($('.sum *:last-child').find('span').html());
+            suma += parseFloat($(selector).find('.small').find('span').html());
+            suma = suma.toFixed(2);
+
+            $('.sum > :last-child').find('span').html(suma);
+        }
         
         function initialize()
         {
@@ -94,13 +164,20 @@ $(function() {
                     }
                 ]
             });
-
+            //localStorage.clear();
             if (localStorage.getItem('transakcije') != undefined)
             {   
                 var a = [];
                 a = JSON.parse(localStorage.getItem('transakcije'));
                 for (var i = 0; i < a.length; i++)
-                    $(a[i]).insertBefore($('.right').find('.sum'));
+                {
+                    var b = [];
+                    b = JSON.parse(a);
+                    var element = '<div class="btn-2 clr-red" data-id="' + b[0] + '"><span class="icon-pen3"></span><h6 class="lrg">'
+                                      + b[1] + '</h6><h6 class="small"><span>' + b[2] + '</span> dinara</h6>'
+                                      + '<span class="odjavi-dugme">x</span></div>';
+                    $(element).insertBefore($('.right').find('.sum'));
+                }
                 
                 var suma = 0;
                 $('.right').find('.btn-2 .small').find('span').each(function() {
@@ -110,12 +187,19 @@ $(function() {
                 $('.sum > :last-child').html(suma);
             }
             
-            if (localStorage.getItem('prijavljeni_ispiti') != undefined)
+            /*if (localStorage.getItem('prijavljeni_ispiti') != undefined)
             {
                 var b = [];
                 b = JSON.parse(localStorage.getItem('prijavljeni_ispiti'));
+                
                 for (var i = 0; i < b.length; i++)
-                $('.left > *').eq(b[i]).find('.prijavi-dugme').addClass('prijavljen');
-            }
+                {
+                    if (b[i] != null)
+                    {
+                        c = JSON.parse(b[i]);
+                        $('.left > *').eq(c[0]).find('.prijavi-dugme').addClass('prijavljen');
+                    }
+                }
+            }*/
         }
 })
