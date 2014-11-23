@@ -232,7 +232,56 @@ a {
     color: #f47564;
 } 
 
+.ispiti-menu, .finansije-menu
+{
+    height: 0;
+    overflow: hidden;
+}
 
+.hidden
+{
+    display: none;
+}
+
+.fc-day-number
+{
+    padding-top: 6px !important;
+    padding-right: 6px !important;
+}
+
+.fc-day-header
+{
+    font-family: 'Open Sans';
+    font-size: 16px;
+    padding: 5px 0 !important;
+}
+
+.fc-left h2
+{
+    text-transform: capitalize;
+}
+
+.fc-content, .fc-event-container
+{
+    background-color: #42a5f5;
+}
+
+.fc-event
+{
+    border: none;
+    background-color: #42a5f5 !important;
+    padding: 5px 0 !important;
+}
+
+.fc-title
+{
+    padding-left: 5px;
+}
+
+.fc-button
+{
+    background-image: none !important;
+}
 
 .btn-1.active {
     border-color: #f47564;

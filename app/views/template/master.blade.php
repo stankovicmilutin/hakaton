@@ -49,6 +49,7 @@
         {{ HTML::script("js/fullcalendar.min.js") }}
         {{ HTML::script("js/fullcalendar-sr.js") }}
         {{ HTML::script("js/script.js") }}
+        {{ HTML::script("js/custom.js") }}
 
     </body>
 </html>

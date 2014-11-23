@@ -8,6 +8,7 @@ Ispiti
     
     @foreach($ispiti as $ispit)
     
+    <div class="ispiti-strana hidden"></div>
     <div class="btn-1">
         <span></span>
         @if( $title == "položeni")

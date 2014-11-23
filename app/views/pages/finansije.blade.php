@@ -5,7 +5,7 @@ Finansije
 @stop
 
 @section('content')
-<div class="thead s">
+<div class="thead s finansije-strana">
         <h2>Istorija transakcija </h2>
         <h6 class="txt-right">Broj fakture</h6>
         <h6 class="txt-right preostalo">Svrha uplate</h6>
