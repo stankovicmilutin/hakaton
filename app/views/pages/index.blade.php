@@ -2,14 +2,20 @@
 
 
 @section('content')
-<div class="widget one">
-    <h3>Ukupno dugovanje</h3><h3><span>28</span>dana</h3>
-</div>
+ <?php  
+    $now = time(); 
+    $your_date = strtotime($sledeci_rok->pocetak);
+    $datediff = $your_date - $now;
+ ?>
 <div class="widget sec">
-    <h3>Do ispitnog roka preostalo je još</h3><h3><span>28</span>dana</h3>
+    <h3>Do ispitnog roka preostalo je</h3><h3><span>{{floor( $datediff/(60*60*24)) }}</span>dana</h3>
 </div>
 <div class="widget thrd">
-    <h3>Ukupno dugovanje</h3><h3><span>14.000</span>RSD</h3>
+    @if($rate != "fib" )
+    <h3>Ukupno dugovanje</h3><h3><span>{{ 96000-$rate }}</span>RSD</h3>
+    @else
+    <h3>Finansiranje iz budžeta</h3><h3><span></span></h3>
+    @endif
 </div>
 <div class="clearfix"></div>
 <div class="thead">
@@ -22,9 +28,6 @@
 $count = count($data);
 if ($count > 5)
     $count = 5;
-
-    $now = time(); 
-
 ?>
 @for($i = 0; $i<$count; $i++)
 @if($i==0)
@@ -33,7 +36,7 @@ if ($count > 5)
     <div class="btn-1">
         @endif
         @if( $data[$i] instanceof Racun )
-            <span></span>
+            <span class="icon-pen3"></span>
             <h6>Školarina</h6>
             <h6>Uplata rate za školarinu</h6>
             <h6 class="txt-right">{{ date("d. F Y.",strtotime( $data[$i]->s_date)) }}</h6>
@@ -42,22 +45,22 @@ if ($count > 5)
                 $datediff = $your_date - $now;
             ?>
             <h6 class="txt-right preostalo">još {{floor( $datediff/(60*60*24)) }} dana</h6>
-            <div><span></span></div>
+            <div><span class="icon-info"></span></div>
         @endif
         @if( $data[$i] instanceof Rok )
-            <span></span>
+            <span class="icon-pen3"></span>
             <h6>Ispitni rok</h6>
-            <h6>Početak prijave za {{  }}</h6>
+            <h6>Početak prijave za {{ $data[$i]->naziv }}</h6>
             <h6 class="txt-right">{{ date("d. F Y.",strtotime( $data[$i]->s_date)) }}</h6>
             <?php
                 $your_date = strtotime($data[$i]->s_date);
                 $datediff = $your_date - $now;
             ?>
             <h6 class="txt-right preostalo">još {{floor( $datediff/(60*60*24)) }} dana</h6>
-            <div><span></span></div>
+            <div><span class="icon-info"></span></div>
         @endif
         @if( $data[$i] instanceof RasporedIspita )
-            <span></span>
+            <span class="icon-pen3"></span>
             <h6>Predstojeći ispit</h6>
             <h6>{{ $data[$i]->predmet }}</h6>
             <h6 class="txt-right">{{ date("d. F Y.",strtotime( $data[$i]->s_date)) }}</h6>
@@ -66,7 +69,7 @@ if ($count > 5)
                 $datediff = $your_date - $now;
             ?>
             <h6 class="txt-right preostalo">još {{floor( $datediff/(60*60*24)) }} dana</h6>
-            <div><span></span></div>
+            <div><span class="icon-info"></span></div>
         @endif
     </div>
     @endfor

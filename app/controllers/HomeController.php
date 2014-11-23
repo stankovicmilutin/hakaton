@@ -6,6 +6,11 @@ class HomeController extends BaseController {
         
         $data = array();
         
+        if(Auth::user()->finansiranje == "SAM")
+            $rate = Racun::where("opis","=","školarina")->sum("iznos");
+        else
+            $rate = "fib";
+        
         $i = 0;
         foreach(Auth::user()->racuni as $racun){
             $data[$i] = $racun;
@@ -36,7 +41,7 @@ class HomeController extends BaseController {
         }
         
         
-	return View::make('pages/index', array("data" => $data ));
+	return View::make('pages/index', array("data" => $data, "sledeci_rok" => $ispitniRok, "rate" => $rate ));
     }
     
     public function ne_ispiti(){
