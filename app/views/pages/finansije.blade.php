@@ -26,6 +26,11 @@ Finansije
 
         </div>
     </div>
+    <div class="modal-bg">
+        <div id="m{{ $uplata->ID }}" class="modal">
+
+        </div>
+    </div>
     @endforeach
 @stop
 @section("extra-js")
