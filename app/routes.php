@@ -33,6 +33,9 @@ Route::group(array('before' =>'auth'), function(){
     Route::get('/kalendar',             array(  'as' => 'kalendar',   'uses' =>'HomeController@kalendar'));
     // User controller
     Route::get('/odjava',       array(  'as' => 'odjava',     'uses' =>'UserController@odjava'));
+    
+    // Ajax controller
+    Route::get('/ajax-ispit', array('as' => 'ajax-ispit', 'uses' => 'AjaxController@proveriDatumIspita'));
 });
 
 

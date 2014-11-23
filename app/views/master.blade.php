@@ -13,6 +13,8 @@
         
         {{ HTML::style("css/style.css") }}
         
+       
+        
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link type="image/x-icon" href="favicon.png" rel="shortcut icon"/>
 
