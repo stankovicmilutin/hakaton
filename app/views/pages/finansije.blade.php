@@ -16,10 +16,15 @@ Finansije
     <div class="btn-1">
         <span></span>
         <h6>{{ Funkcije::phpDatum( $uplata->created_at ) }}</h6>
-        <h6 class="naziv-predmeta"><a href="#" class="invoice">ELFAK151000{{ $uplata->ID }}</a></h6>
+        <h6 class="naziv-predmeta"><a href="#" class="invoice" inv-id="{{ $uplata->ID}}">ELFAK151000{{ $uplata->ID }}</a></h6>
         <h6>{{ $uplata->svrha }}</h6>
         <h6>{{ $uplata->iznos }}</h6>
         <div><span></span></div>
+    </div>
+    <div class="modal-bg">
+        <div id="m{{ $uplata->ID }}" class="modal">
+
+        </div>
     </div>
     @endforeach
 @stop
