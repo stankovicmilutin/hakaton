@@ -1,5 +1,5 @@
-## Coders +1
+# Coders +1
 
-2nd place on Hakaton @ Elfak, Nov 2014
+##2nd place on Hakaton @ Elfak, Nov 2014
 
-# Powered by SICEF
+## Powered by SICEF
